@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "project": {
+      "key": "PROJECT_NAME"
+    },
+    "summary": "JOB_NAME",
+    "issuetype": {
+      "name": "Task"
+    },
+    "reporter": {
+      "id": "712020:a310ba2d-ac21-4cb0-9afc-f82f03ddd535"
+    },
+    "description": "JIRA REST APIによるJIRAテストチケットです。\nJIRAプロジェクト名: PROJECT_NAME\n作成したチケット名: JOB_NAME\n"
+  }
+}
