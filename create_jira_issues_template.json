@@ -1,9 +1,9 @@
 {
   "fields": {
     "project": {
-      "key": "PROJECT_NAME"
+      "key": "JIRA_PROJECT_NAME"
     },
-    "summary": "JOB_NAME",
+    "summary": "JIRA_ISSUE_NAME",
     "issuetype": {
       "name": "Task"
     },

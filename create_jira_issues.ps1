@@ -29,21 +29,23 @@ $headers = @{
 }
 #####
 
+# jsonフォルダ存在チェック
+if ((Test-Path "json") -eq $false) {
+  New-Item "json" -ItemType "directory"
+}
+
 ##### CSVファイルから取得したJIRAプロジェクト名、JIRAチケット名情報に基づきJIRAチケットを作成する
 $i = 0
 foreach ($line in $csv){
-###  ${line}.PROJECT_NAME
-###  ${line}.JOB_NAME
+  ${line}.JIRA_PROJECT_NAME
+  ${line}.JIRA_ISSUE_NAME
 
-#  $output_json_file = "json/jira_api_test_post_issue_" + ${line}.PROJECT_NAME + "_" + ${line}.JOB_NAME + ".json"
   $output_json_file = "json/jira_api_test_post_issue_" + ${line}.PROJECT_NAME + "_" + $i + ".json"
-
   echo "$output_json_file"
 
   (Get-Content "$template_json_file") | Set-Content -Path "$output_json_file"
-
-  Get-Content "$output_json_file" | ForEach-Object {$_ -replace "PROJECT_NAME", ${line}.PROJECT_NAME} | Set-Content $output_json_file
-  Get-Content "$output_json_file" | ForEach-Object {$_ -replace "JOB_NAME", ${line}.JOB_NAME} | Set-Content $output_json_file
+  (Get-Content "$output_json_file") | ForEach-Object {$_ -replace "JIRA_PROJECT_NAME", ${line}.JIRA_PROJECT_NAME} | Set-Content $output_json_file
+  (Get-Content "$output_json_file") | ForEach-Object {$_ -replace "JIRA_ISSUE_NAME", ${line}.JIRA_ISSUE_NAME} | Set-Content $output_json_file
 
   $payload = Get-Content "$output_json_file" -RAW
   $json_payload = $payload

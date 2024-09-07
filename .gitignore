@@ -2,5 +2,8 @@
 config/.env
 config/jira_api_token.config
 
+# json
+json
+
 # Log file
 *.log
