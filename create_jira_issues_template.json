@@ -10,6 +10,6 @@
     "reporter": {
       "id": "712020:a310ba2d-ac21-4cb0-9afc-f82f03ddd535"
     },
-    "description": "JIRA REST APIによるJIRAテストチケットです。\nJIRAプロジェクト名: PROJECT_NAME\n作成したチケット名: JOB_NAME\n"
+    "description": "JIRA REST APIによるJIRAテストチケットです。\nJIRAプロジェクト名: JIRA_PROJECT_NAME\n作成したチケット名: JIRA_ISSUE_NAME\n"
   }
 }
