@@ -40,7 +40,7 @@ foreach ($line in $csv){
   ${line}.JIRA_PROJECT_NAME
   ${line}.JIRA_ISSUE_NAME
 
-  $output_json_file = "json/jira_api_test_post_issue_" + ${line}.PROJECT_NAME + "_" + $i + ".json"
+  $output_json_file = "json/jira_api_test_post_issue_" + ${line}.JIRA_PROJECT_NAME + "_" + $i + ".json"
   echo "$output_json_file"
 
   (Get-Content "$template_json_file") | Set-Content -Path "$output_json_file"
